@@ -1,3 +1,8 @@
+import sys
+import os
+parent_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(parent_dir, '..'))
+
 from flask import Flask
 from flask_jwt import JWT, jwt_required
 from app.db.db import db

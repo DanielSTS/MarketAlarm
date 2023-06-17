@@ -1,12 +1,11 @@
 from flask import Blueprint, jsonify, request
+from flask_jwt import jwt_required
 from app.db.repository import create_user, create_alarm, get_alarms_by_user
 from app.core.models import User
 
 app_blueprint = Blueprint('app_blueprint', __name__)
 
 def init_app(app, jwt):
-    app.register_blueprint(app_blueprint)
-
     @app_blueprint.route('/register', methods=['POST'])
     def register():
         username = request.json.get('username')
@@ -45,3 +44,4 @@ def init_app(app, jwt):
     def jwt_error_handler(error):
         return jsonify({'error': error.description}), error.status_code
 
+    app.register_blueprint(app_blueprint)
