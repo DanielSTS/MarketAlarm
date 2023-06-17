@@ -1,5 +1,5 @@
 from app.core.models import User, Alarm
-from app.db import db
+from app.db.db import db
 
 def create_user(username, password):
     user = User(username=username, password=password)
