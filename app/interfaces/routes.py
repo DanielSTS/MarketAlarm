@@ -1,9 +1,11 @@
 from flask import Blueprint, jsonify, request
 from flask_jwt import jwt_required
-from app.db.repository import create_user, create_alarm, get_alarms_by_user
+from app.db.repository import create_user, get_alarms_by_user
 from app.core.models import User
+from app.use_cases.auth import identity
 
 app_blueprint = Blueprint('app_blueprint', __name__)
+
 
 def init_app(app, jwt):
     @app_blueprint.route('/register', methods=['POST'])
