@@ -10,6 +10,15 @@ services:
       - .:/app
     depends_on:
       - db
+  monitor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: python monitor.py
+    depends_on:
+      - db
   db:
     image: postgres:12.8
     environment:
