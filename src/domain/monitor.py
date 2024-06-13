@@ -1,5 +1,7 @@
 import time
-from app.db.repository import get_alarms_by_user
+
+from src.infra.db.repository import get_alarms_by_user
+
 
 class MonitorService:
     def __init__(self):
@@ -15,7 +17,9 @@ class MonitorService:
                 # ou acessar uma API de cotação como o Alpha Vantage, por exemplo
                 current_price = get_current_price(alarm.asset)
                 if current_price >= alarm.target_price:
-                    print(f"Alarm triggered: Asset {alarm.asset} reached target price {alarm.target_price}")
+                    print(
+                        f"Alarm triggered: Asset {alarm.asset} reached target price {alarm.target_price}"
+                    )
                     # Aqui você pode adicionar a lógica para notificar o usuário (por exemplo, enviar um e-mail)
 
             time.sleep(10)  # Aguarde 10 segundos antes de verificar novamente
@@ -23,7 +27,8 @@ class MonitorService:
     def stop(self):
         self.running = False
 
+
 monitor_service = MonitorService()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     monitor_service.start()

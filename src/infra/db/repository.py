@@ -1,5 +1,5 @@
-from app.core.models import User, Alarm
-from app.db.db import db
+from src.domain.models import Alarm, User
+from src.infra.db.db import db
 
 
 def create_user(username, password):

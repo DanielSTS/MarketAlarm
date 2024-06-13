@@ -1,4 +1,4 @@
-from app.db.repository import get_user_by_username
+from src.infra.db.repository import get_user_by_username
 
 
 def authenticate(username, password):
@@ -8,5 +8,5 @@ def authenticate(username, password):
 
 
 def identity(payload):
-    user_id = payload['identity']
+    user_id = payload["identity"]
     return get_user_by_username(user_id)

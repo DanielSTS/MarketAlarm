@@ -7,7 +7,7 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - .:/app
+      - .:/src
     depends_on:
       - db
   monitor:
@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/app
+      - .:/src
     command: python monitor.py
     depends_on:
       - db

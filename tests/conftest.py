@@ -1,16 +1,17 @@
 import pytest
 from flask import Flask
 from flask_jwt import JWT
-from app.use_cases.auth import authenticate, identity
-from app.interfaces import routes
-from app.db.db import db
+
+from src.application.use_cases import authenticate, identity
+from src.infra.db import db
+from src.infra.web import routes
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def app():
     app = Flask(__name__)
-    app.config['TESTING'] = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+    app.config["TESTING"] = True
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///:memory:"
     jwt = JWT(app, authenticate, identity)
 
     routes.init_app(app, jwt)
@@ -26,6 +27,6 @@ def app():
         db.drop_all()
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def client(app):
     return app.test_client()
