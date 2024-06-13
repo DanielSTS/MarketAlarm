@@ -50,7 +50,11 @@ def init_app(app, jwt):
         user = identity(request.headers.get("Authorization").split(" ")[1])
         alarms = get_alarms_by_user(user)
         alarms_data = [
-            {"id": alarm.id, "asset": alarm.asset, "target_price": alarm.target_price}
+            {
+                "id": alarm.id,
+                "asset": alarm.asset,
+                "target_price": alarm.target_price,
+            }
             for alarm in alarms
         ]
         return jsonify({"alarms": alarms_data}), 200

@@ -4,12 +4,12 @@ import sys
 from flask import Flask
 from flask_jwt import JWT
 
-parent_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(parent_dir, ".."))
-
-#from src.application.use_cases import authenticate, identity
+from src.application.use_cases import authenticate, identity
 from src.infra.db import db
 from src.infra.web import routes
+
+parent_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(parent_dir, ".."))
 
 
 def create_app():

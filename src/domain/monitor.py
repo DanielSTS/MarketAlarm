@@ -10,19 +10,15 @@ class MonitorService:
     def start(self):
         self.running = True
         while self.running:
-            alarms = get_alarms_by_user()  # Obtenha os alarmes do banco de dados
+            alarms = get_alarms_by_user()
             for alarm in alarms:
-                # Lógica de monitoramento da cotação e verificação de alarmes disparados
-                # Você pode usar uma biblioteca externa para obter as cotações em tempo real
-                # ou acessar uma API de cotação como o Alpha Vantage, por exemplo
                 current_price = get_current_price(alarm.asset)
                 if current_price >= alarm.target_price:
                     print(
-                        f"Alarm triggered: Asset {alarm.asset} reached target price {alarm.target_price}"
+                        f"Alarm triggered: Asset {alarm.asset} reached "
+                        f"target price {alarm.target_price}"
                     )
-                    # Aqui você pode adicionar a lógica para notificar o usuário (por exemplo, enviar um e-mail)
-
-            time.sleep(10)  # Aguarde 10 segundos antes de verificar novamente
+            time.sleep(10)
 
     def stop(self):
         self.running = False
