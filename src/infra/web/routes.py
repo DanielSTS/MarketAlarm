@@ -3,7 +3,7 @@ from flask_jwt import jwt_required
 
 from src.application.use_cases import identity
 from src.domain.models import User
-from src.infra.db.repository import create_user, get_alarms_by_user
+from src.infra.database.user_repository import create_user, get_alarms_by_user
 
 app_blueprint = Blueprint("app_blueprint", __name__)
 
@@ -20,7 +20,7 @@ def init_app(app, jwt):
             return jsonify({"error": "Username already exists"}), 409
 
         user = create_user(username, password)
-        return jsonify({"user_id": user.id, "username": user.username}), 201
+        return jsonify({"user_id": user.id, "username": user.name}), 201
 
     @app_blueprint.route("/alarms", methods=["POST"])
     @jwt_required()

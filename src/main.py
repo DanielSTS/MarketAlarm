@@ -5,7 +5,7 @@ from flask import Flask
 from flask_jwt import JWT
 
 from src.application.use_cases import authenticate, identity
-from src.infra.db import db
+from src.infra.database import database
 from src.infra.web import routes
 
 parent_dir = os.path.dirname(os.path.abspath(__file__))
