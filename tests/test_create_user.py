@@ -16,11 +16,13 @@ def create_user_use_case(user_repository) -> CreateUser:
 
 
 def test_create_user_success(create_user_use_case):
-    response = create_user_use_case.execute("John Doe", "john@example.com", "password123")
-    assert uuid.UUID(response['id'])
+    response = create_user_use_case.execute(
+        "John Doe", "john@example.com", "password123"
+    )
+    assert uuid.UUID(response["id"])
 
 
 def test_create_existent_user(create_user_use_case):
     create_user_use_case.execute("John Doe", "john@example.com", "password123")
-    with pytest.raises(Exception, match='User already exists'):
+    with pytest.raises(Exception, match="User already exists"):
         create_user_use_case.execute("John Doe", "john@example.com", "password123")

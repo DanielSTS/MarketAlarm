@@ -34,7 +34,7 @@ class UserRepositoryDatabase(UserRepository):
             name=model.name,
             email=model.email,
             password=model.password_hash,
-            salt=model.password_salt
+            salt=model.password_salt,
         )
 
     @staticmethod
@@ -44,5 +44,5 @@ class UserRepositoryDatabase(UserRepository):
             name=entity.name,
             email=entity.email.value,
             password_hash=entity.password.value,
-            password_salt=entity.password.salt
+            password_salt=entity.password.salt,
         )

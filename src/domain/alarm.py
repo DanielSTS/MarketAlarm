@@ -2,7 +2,9 @@ import uuid
 
 
 class Alarm:
-    def __init__(self, id: uuid.UUID, user_id: uuid.UUID, asset: str, target_price: float):
+    def __init__(
+        self, id: uuid.UUID, user_id: uuid.UUID, asset: str, target_price: float
+    ):
         self.id = id
         self.user_id = user_id
         self.asset = asset

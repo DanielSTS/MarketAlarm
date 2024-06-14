@@ -12,7 +12,7 @@ from src.infra.database.user_repository import UserRepositoryDatabase
 
 @pytest.fixture(scope="module")
 def db_engine():
-    engine = create_engine('sqlite:///:memory:')
+    engine = create_engine("sqlite:///:memory:")
     Base.metadata.create_all(bind=engine)
     return engine
 

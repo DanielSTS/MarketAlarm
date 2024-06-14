@@ -1,4 +1,4 @@
-'''import time
+"""import time
 
 from src.infra.database.repository import get_alarms_by_user
 
@@ -27,4 +27,4 @@ class MonitorService:
 monitor_service = MonitorService()
 
 if __name__ == "__main__":
-    monitor_service.start()'''
+    monitor_service.start()"""

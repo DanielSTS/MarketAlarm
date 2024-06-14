@@ -16,7 +16,9 @@ class User:
         return User(uuid.uuid4(), name, email, BcryptPassword.create(password))
 
     @staticmethod
-    def restore(id: uuid.UUID, name: str, email: str, password: bytes, salt: bytes) -> "User":
+    def restore(
+        id: uuid.UUID, name: str, email: str, password: bytes, salt: bytes
+    ) -> "User":
         return User(id, name, email, BcryptPassword.restore(password, salt))
 
     def validate_password(self, password: str) -> bool:

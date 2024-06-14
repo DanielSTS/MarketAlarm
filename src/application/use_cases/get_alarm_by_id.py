@@ -8,5 +8,5 @@ class GetAlarmById:
     def execute(self, id: str):
         alarm = self.alarm_dao.get_by_id(id)
         if not alarm:
-            raise Exception('Alarm not found')
+            raise Exception("Alarm not found")
         return alarm

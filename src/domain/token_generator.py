@@ -11,12 +11,12 @@ class TokenGenerator:
     @staticmethod
     def sign(user: User, date: datetime) -> str:
         payload = {
-            'email': user.email.value,
-            'iat': date.timestamp(),
-            'expiresIn': TokenGenerator.EXPIRES_IN
+            "email": user.email.value,
+            "iat": date.timestamp(),
+            "expiresIn": TokenGenerator.EXPIRES_IN,
         }
-        return jwt.encode(payload, TokenGenerator.KEY, algorithm='HS256')
+        return jwt.encode(payload, TokenGenerator.KEY, algorithm="HS256")
 
     @staticmethod
     def verify(token: str) -> dict:
-        return jwt.decode(token, TokenGenerator.KEY, algorithms=['HS256'])
+        return jwt.decode(token, TokenGenerator.KEY, algorithms=["HS256"])

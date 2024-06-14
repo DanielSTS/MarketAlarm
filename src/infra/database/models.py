@@ -6,7 +6,7 @@ Base = declarative_base()
 
 
 class UserModel(Base):
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     id = Column(UUID(), primary_key=True, default=uuid.uuid4)
     name = Column(String(255), nullable=False)
@@ -18,10 +18,10 @@ class UserModel(Base):
 
 
 class AlarmModel(Base):
-    __tablename__ = 'alarms'
+    __tablename__ = "alarms"
 
     id = Column(UUID(), primary_key=True, default=uuid.uuid4)
-    user_id = Column(UUID(), ForeignKey('users.id'), nullable=False)
+    user_id = Column(UUID(), ForeignKey("users.id"), nullable=False)
     asset = Column(String(255), nullable=False)
     target_price = Column(Float, nullable=False)
 

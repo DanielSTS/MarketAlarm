@@ -9,9 +9,7 @@ class CreateUser:
     def execute(self, name: str, email: str, password: str):
         user = self.user_repository.get_by_email(email)
         if user:
-            raise Exception('User already exists')
+            raise Exception("User already exists")
         user = User.create(name, email, password)
         self.user_repository.save(user)
-        return {
-            'id': str(user.id)
-        }
+        return {"id": str(user.id)}

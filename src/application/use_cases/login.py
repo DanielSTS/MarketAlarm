@@ -12,9 +12,6 @@ class Login:
         user = self.user_repository.get_by_email(email)
         if user and user.validate_password(password):
             token = TokenGenerator.sign(user, datetime.now())
-            return {
-                'token': token,
-                'id': user.id
-            }
+            return {"token": token, "id": user.id}
         else:
-            raise Exception('Invalid credentials')
+            raise Exception("Invalid credentials")
