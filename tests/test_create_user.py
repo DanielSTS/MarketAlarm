@@ -1,8 +1,9 @@
 import uuid
 
 import pytest
-from src.application.use_cases.create_alarm import CreateAlarm
-from src.application.use_cases.create_user import CreateUser
+
+from src.use_cases.create_alarm import CreateAlarm
+from src.use_cases.create_user import CreateUser
 
 
 @pytest.fixture

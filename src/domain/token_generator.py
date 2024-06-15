@@ -1,4 +1,5 @@
 from datetime import datetime
+
 import jwt
 
 from src.domain.user import User

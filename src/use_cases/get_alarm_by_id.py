@@ -1,4 +1,4 @@
-from src.application.use_cases.interfaces import AlarmDao
+from src.use_cases.interfaces import AlarmDao
 
 
 class GetAlarmById:

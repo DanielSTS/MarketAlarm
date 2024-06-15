@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+
 from src.domain.alarm import Alarm
 from src.domain.user import User
 

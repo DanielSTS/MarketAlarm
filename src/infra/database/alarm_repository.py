@@ -1,7 +1,8 @@
 from sqlalchemy.orm import Session
+
 from src.domain.alarm import Alarm
-from src.application.use_cases.interfaces import AlarmRepository
 from src.infra.database.models import AlarmModel
+from src.use_cases.interfaces import AlarmRepository
 
 
 class AlarmRepositoryDatabase(AlarmRepository):

@@ -1,6 +1,6 @@
 import pytest
 
-from src.application.use_cases.get_alarm_by_id import GetAlarmById
+from src.use_cases.get_alarm_by_id import GetAlarmById
 
 
 @pytest.fixture

@@ -1,6 +1,6 @@
 import pytest
 
-from src.application.use_cases.get_alarms import GetAlarms
+from src.use_cases.get_alarms import GetAlarms
 
 
 @pytest.fixture

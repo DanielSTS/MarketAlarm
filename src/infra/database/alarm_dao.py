@@ -1,8 +1,9 @@
 import uuid
 
 from sqlalchemy.orm import Session
-from src.application.use_cases.interfaces import AlarmDao
+
 from src.infra.database.models import AlarmModel
+from src.use_cases.interfaces import AlarmDao
 
 
 class AlarmDaoDatabase(AlarmDao):

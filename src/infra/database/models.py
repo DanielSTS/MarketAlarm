@@ -1,8 +1,9 @@
-from sqlalchemy import Column, String, Float, ForeignKey, LargeBinary, UUID
-from sqlalchemy.orm import relationship, declarative_base
 import uuid
 
-Base = declarative_base()
+from sqlalchemy import UUID, Column, Float, ForeignKey, LargeBinary, String
+from sqlalchemy.orm import relationship
+
+from src.infra.database.connection import Base
 
 
 class UserModel(Base):

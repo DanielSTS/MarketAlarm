@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from src.application.use_cases.interfaces import UserRepository
 from src.domain.token_generator import TokenGenerator
+from src.use_cases.interfaces import UserRepository
 
 
 class Login:

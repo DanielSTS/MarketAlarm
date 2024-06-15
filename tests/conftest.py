@@ -2,8 +2,8 @@ import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from src.application.use_cases.create_alarm import CreateAlarm
-from src.application.use_cases.create_user import CreateUser
+from src.use_cases.create_alarm import CreateAlarm
+from src.use_cases.create_user import CreateUser
 from src.infra.database.alarm_dao import AlarmDaoDatabase
 from src.infra.database.alarm_repository import AlarmRepositoryDatabase
 from src.infra.database.models import Base

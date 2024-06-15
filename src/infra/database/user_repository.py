@@ -1,9 +1,10 @@
 import uuid
 
 from sqlalchemy.orm import Session
+
 from src.domain.user import User
-from src.application.use_cases.interfaces import UserRepository
 from src.infra.database.models import UserModel
+from src.use_cases.interfaces import UserRepository
 
 
 class UserRepositoryDatabase(UserRepository):

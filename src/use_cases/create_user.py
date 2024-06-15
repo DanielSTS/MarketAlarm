@@ -1,5 +1,5 @@
-from src.application.use_cases.interfaces import UserRepository
 from src.domain.user import User
+from src.use_cases.interfaces import UserRepository
 
 
 class CreateUser:

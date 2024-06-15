@@ -1,5 +1,5 @@
-from src.application.use_cases.interfaces import AlarmRepository, UserRepository
 from src.domain.alarm import Alarm
+from src.use_cases.interfaces import AlarmRepository, UserRepository
 
 
 class CreateAlarm:
