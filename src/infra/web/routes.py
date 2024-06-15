@@ -1,7 +1,12 @@
 from flask import Blueprint, jsonify, request
 
-from src.composer import create_user_composer, create_alarm_composer, login_composer, get_alarm_by_id_composer, \
-    get_alarms_composer
+from src.composer import (
+    create_user_composer,
+    create_alarm_composer,
+    login_composer,
+    get_alarm_by_id_composer,
+    get_alarms_composer,
+)
 from src.infra.web.flask_adapter import request_adapter
 
 users_bp = Blueprint("users_bp", __name__)
